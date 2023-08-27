@@ -85,8 +85,8 @@ uint32_t result = RESULT_OK;
 **********************************************************************
 */
 
-#define PAGE_SIZE_SHIFT             (8) //(3)   // Smallest amount of data that can be programmed. <PageSize> = 2 ^ Shift. Shift = 3 => <PageSize> = 2^3 = 8 bytes
-#define SECTOR_SIZE_SHIFT           (12)   // Flashes with uniform sectors only. <SectorSize> = 2 ^ Shift. Shift = 12 => <SectorSize> = 2 ^ 12 = 4096 bytes
+#define PAGE_SIZE_SHIFT             (9)    // 512Bytes  // Smallest amount of data that can be programmed. <PageSize> = 2 ^ Shift. Shift = 3 => <PageSize> = 2^3 = 8 bytes
+#define SECTOR_SIZE_SHIFT           (18)   // 256KB		//Flashes with uniform sectors only. <SectorSize> = 2 ^ Shift. Shift = 12 => <SectorSize> = 2 ^ 12 = 4096 bytes
 
 //
 // Default definitions for optional functions if not compiled in
@@ -209,7 +209,7 @@ int Init(U32 Addr, U32 Freq, U32 Func) {
   (void)_RestoreInfo;
   //
  // Dummy code, needs to be replaced with Init code.
-  option.option0.U = 0xC0000005;
+  option.option0.U = 0xc0233007;  // HyperFLASH 1V8, Query pads: Octal, CMD pads: 8, Frequency: 133MHz
   option.option1.U = 0x00000000;
   //bl_api_init();
   fspi_instance = 1;

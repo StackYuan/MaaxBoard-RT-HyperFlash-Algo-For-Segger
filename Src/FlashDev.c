@@ -71,8 +71,8 @@ struct FlashDevice {
 
 struct FlashDevice const FlashDevice __attribute__ ((section ("DevDscr"))) = {
   0x0101,                         // Algo version. Must be == 0x0101
-  { "Template IMXRT1176 Constyu" },  // Flash device name
-  1,                              // Flash device type. Must be == 1
+  { "MaaxBoard-RT IMXRT1176 " },  // Flash device name
+  1,                              // Flash device type.
   0x30000000,                     // Flash base address
   0x08000000,                     // Total flash device size in Bytes
   512,                            // Page Size (Will be passed as <NumBytes> to ProgramPage(). A multiple of this is passed as <NumBytes> to SEGGER_OPEN_Program() to program moer than 1 page in 1 RAMCode call, speeding up programming).
@@ -94,7 +94,7 @@ struct FlashDevice const FlashDevice __attribute__ ((section ("DevDscr"))) = {
   // 0x20000, 0x20000       1 * 128 KB = 128 KB
   //
   {
-    { 0x00001000, 0x00000000 },   // 4 *  16 KB =  64 KB
+    { 0x00040000, 0x00000000 },   // 256 KB
     { 0xFFFFFFFF, 0xFFFFFFFF }    // Indicates the end of the flash sector layout. Must be present.
   }
 };

@@ -213,7 +213,7 @@ static bool is_flexspi_clock_enabled(uint32_t instance);
  * Variables
  ******************************************************************************/
 // Secondary option of the DQS pin for Primary FLEXSPI1 Pin group
-const flexspi_pad_attribute_t k_flexspi1_A_DQS3 = { kIOMUXC_SW_MUX_CTL_PAD_GPIO_EMC_B1_18, 6,
+const flexspi_pad_attribute_t k_flexspi1_A_DQS3 = { kIOMUXC_SW_MUX_CTL_PAD_GPIO_EMC_B2_18, 6,
                                                     kIOMUXC_FLEXSPI1_I_DQS_FA_SELECT_INPUT, 0 };
 // Reset Pin Definitions
 const gpio_pad_data_t k_resetPins[2] = {
